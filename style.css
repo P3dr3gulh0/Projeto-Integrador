@@ -1,0 +1,19 @@
+    body {
+      background-color: #f5f5f5;
+    }
+    .categoria-item img {
+      width: 50px;
+      height: 50px;
+    }
+    .servico-card img {
+      height: 120px;
+      object-fit: cover;
+    }
+    .nav-bottom {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      border-top: 1px solid #ccc;
+    }
