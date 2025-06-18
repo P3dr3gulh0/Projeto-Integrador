@@ -35,6 +35,7 @@
                 <div class="form-check text-start my-3">
                     <input class="form-check-input" type="checkbox" value="remember-me" id="checkDefault">
                     <label class="form-check-label" for="checkDefault">Lembre-se de mim</label>
+                    <a type="button" href="login.php">Login</a>
                 </div>
 
                 <button class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
@@ -62,17 +63,39 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_query($conexao, $inserir)) {
         echo "<script>
             alert('Cadastro realizado com sucesso!');
-            window.location.href = 'cadastro.php';
+            window.location.href = 'perfil.html';
         </script>";
         exit();
     } else {
         echo "<script>
             alert('Erro ao cadastrar!');
-            window.location.href = 'cadastro.php';
+            window.location.href = 'perfil.html';
         </script>";
         exit();
     }
 }
 ?>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome= trim($_POST["nome"]);
+    $email = trim($_POST["email"]);
+    $senha = $_POST["senha"];
+ 
+    require("conexao.php");
+ 
+    $stmt = $conexao->prepare("INSERT INTO usuario (nome, email, senha) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $nome, $email, $senha);
+ 
+    if ($stmt->execute()) {
+      echo "<script>alert('Cadastro realizado com sucesso!'); window.location.href='login.html';</script>";
+    } else {
+      echo "<script>alert('Erro ao cadastrar!');</script>";
+    }
+ 
+    $stmt->close();
+    $conexao->close();
+  }
+  ?>
 
 </html>
