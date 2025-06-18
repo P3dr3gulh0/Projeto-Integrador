@@ -29,7 +29,108 @@ body {
   /* cobre o espaço mantendo proporção */
 }
 
-footer{
+footer {
   position: fixed;
   margin-bottom: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Raleway', 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+  background-color: #b6b3b3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 700px;
+  width: 100%;
+  text-align: justify;
+}
+
+h1 {
+  color: #FA7426;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Michroma';
+}
+
+h2 {
+  color: #333;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 20px 0 10px;
+  text-align: center;
+  font-family: 'Michroma';
+}
+
+p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+ul li {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li::before {
+  content: '✔';
+  color: #001D32;
+  position: absolute;
+  left: 0;
+}
+
+.highlight {
+  color: #001D32;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p,
+  ul li {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
 }
