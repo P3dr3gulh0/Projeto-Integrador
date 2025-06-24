@@ -24,8 +24,8 @@
     </style>
 </head>
 
-<body>
-    <div class="container my-4">
+<body class="container-sm" >
+    <div class="container w-100 my-4">
         <h1 class="mb-4">Configurações</h1>
 
         <!-- Perfil -->
@@ -123,7 +123,11 @@
         </div>
     </div>
     </div>
-
+    <footer class="nav-bottom d-flex justify-content-around py-2">
+        <a href="index.html" class="text-dark text-decoration-none text-center">🏠<br><small>Início</small></a>
+        <a href="config.html" class="text-dark text-decoration-none text-center">⚙<br><small>Configurações</small></a>
+        <a href="perfil.html" class="text-dark text-decoration-none text-center">👤<br><small>Perfil</small></a>
+    </footer>
     <script>
         // Gerencia modo claro / escuro com persistência local (localStorage)
         const body = document.body;

@@ -36,13 +36,14 @@
   </style>
 </head>
 
-<body class="bg-light">
+<body class="bg-light container-sm">
 
   <div class="container py-4">
 
     <!-- Perfil -->
     <div class="d-flex align-items-center mb-3">
-      <img src="img/coisasamais/perfil.png" alt="Foto do profissional" class="rounded-circle me-3" width="60" height="60">
+      <img src="img/coisasamais/perfil.png" alt="Foto do profissional" class="rounded-circle me-3" width="60"
+        height="60">
       <div>
         <h6 class="mb-0">Nome</h6>
         <small class="text-muted">Serviço Oferecido</small>
@@ -90,11 +91,17 @@
 
     <!-- Aba de certificações -->
     <div id="cert-tab" class="d-none">
-      <button class="btn btn-outline-dark tab-button"><p>Clique para Adicionar Certificado</p></button>
+      <button class="btn btn-outline-dark tab-button">
+        <p>Clique para Adicionar Certificado</p>
+      </button>
     </div>
 
   </div>
-
+  <footer class="nav-bottom d-flex justify-content-around py-2">
+    <a href="index.html" class="text-dark text-decoration-none text-center">🏠<br><small>Início</small></a>
+    <a href="config.html" class="text-dark text-decoration-none text-center">⚙<br><small>Configurações</small></a>
+    <a href="perfil.html" class="text-dark text-decoration-none text-center">👤<br><small>Perfil</small></a>
+  </footer>
   <script>
     function showTab(tab) {
       document.getElementById('info-tab').classList.toggle('d-none', tab !== 'info');
