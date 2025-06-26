@@ -1,4 +1,6 @@
 <?php
+ini_set('session.gc_maxlifetime', 3600); // 1 hora
+session_set_cookie_params(3600);
 session_start();
 if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
@@ -15,7 +17,7 @@ if (!isset($_SESSION["usuario"])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #c6c6c5;
             font-family: 'Segoe UI', sans-serif;
         }
 
@@ -61,6 +63,7 @@ if (!isset($_SESSION["usuario"])) {
         <p><strong>Nome:</strong> <?php echo htmlspecialchars($_SESSION["usuario"]["nome"]); ?></p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($_SESSION["usuario"]["email"]); ?></p>
         <a href="http://localhost/testeTrustwork/logout.php" class="btn btn-logout mt-4">Sair</a>
+        <a style="background-color: #e26317;" href="servicos.html" class="btn btn-logout mt-4">Voltar</a>
     </div>
 
 </body>

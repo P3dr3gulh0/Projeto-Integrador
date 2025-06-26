@@ -1,5 +1,11 @@
 <?php
+ini_set('session.gc_maxlifetime', 3600); // 1 hora
+session_set_cookie_params(3600);
 session_start();
+if (isset($_SESSION["usuario"])) {
+    header("Location: perfil.php");
+    exit;
+}
 include('conexao.php');
 
 $erro = "";
@@ -41,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f7f7f7;
+            background-color: #c6c6c5;
         }
 
         .login-container {

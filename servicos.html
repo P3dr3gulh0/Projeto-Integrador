@@ -11,13 +11,13 @@
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-color: #f8f9fa;
+            background-color: #c6c6c5;
             color: #001f3f;
         }
 
         header {
             background-color: #001f3f;
-            color: orangered;
+            color: #df5200;
             padding: 1.5rem;
             text-align: center;
         }
@@ -60,13 +60,24 @@
             padding: 1rem;
             border-radius: 10px;
             box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .category img {
-            width: 60px;
-            height: 60px;
+            width: 100%;
+            max-width: 100px;
+            aspect-ratio: 1 / 1;
             object-fit: contain;
             margin-bottom: 10px;
+        }
+
+        .category p {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 500;
+            color: #001f3f;
         }
 
         .service-item {
@@ -113,7 +124,7 @@
         <div id="carouselDestaques" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner rounded">
                 <div class="carousel-item active">
-                    <img src="img/madeira.jpg" class="d-block w-100" alt="Serviço Destaque 1">
+                    <img src="img/img-tabua-destaque (1).jpg" class="d-block w-100" alt="Serviço Destaque 1">
                 </div>
                 <div class="carousel-item">
                     <img src="img/encanador.png" class="d-block w-100" alt="Serviço Destaque 2">
@@ -124,17 +135,19 @@
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselDestaques"
                 data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
+                <span style="background-color: #001f3f; border-radius: 20px;"
+                    class="carousel-control-prev-icon border"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselDestaques"
                 data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
+                <span style="background-color: #001f3f; border-radius: 20px;"
+                    class="carousel-control-next-icon border"></span>
             </button>
         </div>
 
         <h2 class="mt-5">Categorias</h2>
         <div class="categories">
-            <div class="category">
+            <div class="category ">
                 <img src="img/encanador.png" alt="encanador">
                 <p>Encanador</p>
             </div>
@@ -159,12 +172,12 @@
         <div class="service-item">
             <p><strong>Extensão de Cílios</strong> – R$25,99</p>
         </div>
-    </div>
+    </div> <br>
 
     <nav>
         <a href="index.html"><i class="bi bi-house-door-fill"></i></a>
-        <a href="#"><i class="bi bi-search"></i></a>
-        <a href="#"><i class="bi bi-bell-fill"></i></a>
+        <a href="pesquisa.html"><i class="bi bi-search"></i></a>
+        <a href="notificacoes.html"><i class="bi bi-bell-fill"></i></a>
         <a href="http://localhost/testeTrustwork/perfil.php"><i class="bi bi-person-circle"></i></a>
     </nav>
 

@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f7f7f7;
+            background-color: #c6c6c5;
             font-family: 'Segoe UI', sans-serif;
         }
 
