@@ -11,109 +11,95 @@
 </head>
 
 <body class="container-sm">
-    <div class="container w-100 my-4">
+    <div class="my-4">
         <h1 class="mb-4">Configurações</h1>
 
         <!-- Perfil -->
         <div class="card mb-4">
-                <div class="card-header">
-                    <button class="btn btn-link text-decoration-none text-dark" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapsePerfil" aria-expanded="true" aria-controls="collapsePerfil">
-                        Perfil
-                    </button>
-                </div>
-                <div id="collapsePerfil" class="collapse show">
-                    <div class="card-body">
-                        <div class="card-body">
-                            <form id="perfilForm">
-                                <div class="mb-3">
-                                    <label for="nome" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="nome" placeholder="Seu nome" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="nickname" class="form-label">Nickname</label>
-                                    <input type="text" class="form-control" id="nickname" placeholder="Seu apelido" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input type="email" class="form-control" id="email"
-                                        placeholder="email@exemplo.com" />
-                                </div>
-                                <div class="mb-3">
-                                    <label for="senha" class="form-label">Senha</label>
-                                    <input type="password" class="form-control" id="senha" placeholder="••••••••" />
-                                </div>
-                                <button type="submit" class="btn btn-primary">Salvar Perfil</button>
-                            </form>
+            <div class="card-header">
+                <button class="btn btn-link text-decoration-none text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsePerfil" aria-expanded="true" aria-controls="collapsePerfil">
+                    Perfil
+                </button>
+            </div>
+            <div id="collapsePerfil" class="collapse show">
+                <div class="card-body">
+                    <form id="perfilForm">
+                        <div class="mb-3">
+                            <label for="nome" class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Seu nome" />
                         </div>
-                    </div>
+                        <div class="mb-3">
+                            <label for="nickname" class="form-label">Nickname</label>
+                            <input type="text" class="form-control" id="nickname" placeholder="Seu apelido" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="email@exemplo.com" />
+                        </div>
+                        <div class="mb-3">
+                            <label for="senha" class="form-label">Senha</label>
+                            <input type="password" class="form-control" id="senha" placeholder="••••••••" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Salvar Perfil</button>
+                    </form>
                 </div>
             </div>
-
         </div>
 
         <!-- Aparência -->
         <div class="card mb-4">
-                <div class="card-header">
-                    <button class="btn btn-link text-decoration-none text-dark" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseAparencia" aria-expanded="true" aria-controls="collapseAparencia">
-                        Aparência
-                    </button>
-                </div>
-                <div id="collapseAparencia" class="collapse show">
-                    <div class="card-body">
-                        <div class="card-body">
-                            <form id="aparenciaForm">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="modo" id="modoClaro"
-                                        value="claro" checked />
-                                    <label class="form-check-label" for="modoClaro">Modo Claro</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="modo" id="modoEscuro"
-                                        value="escuro" />
-                                    <label class="form-check-label" for="modoEscuro">Modo Escuro</label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="modo" id="modoClaro2"
-                                        value="claro" />
-                                    <label class="form-check-label" onclick="ativarContraste()">Modo
-                                        Contraste</label>
-                                </div>
-                                <button type="submit" class="btn mt-3">Salvar Aparência</button>
-                            </form>
+            <div class="card-header">
+                <button class="btn btn-link text-decoration-none text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseAparencia" aria-expanded="true" aria-controls="collapseAparencia">
+                    Aparência
+                </button>
+            </div>
+            <div id="collapseAparencia" class="collapse show">
+                <div class="card-body">
+                    <form id="aparenciaForm">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="modo" id="modoClaro" value="claro" />
+                            <label class="form-check-label" for="modoClaro">Modo Claro</label>
                         </div>
-                    </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="modo" id="modoEscuro" value="escuro" />
+                            <label class="form-check-label" for="modoEscuro">Modo Escuro</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="modo" id="modoContraste" value="contraste" />
+                            <label class="form-check-label" for="modoContraste">Modo Contraste</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Salvar Aparência</button>
+                    </form>
                 </div>
             </div>
         </div>
 
         <!-- Sobre -->
         <div class="card mb-4">
-                <div class="card-header">
-                    <button class="btn btn-link text-decoration-none text-dark" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseSobre" aria-expanded="true" aria-controls="collapseSobre">
-                        Sobre
-                    </button>
-                </div>
-                <div id="collapseSobre" class="collapse show">
-                    <div class="card-body">
-                        <div class="card-body">
-                            <a href="sobrenos.html" class="text-decoration-none text-center">Sobre nos</a>
-                        </div>
-                    </div>
+            <div class="card-header">
+                <button class="btn btn-link text-decoration-none text-dark" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseSobre" aria-expanded="true" aria-controls="collapseSobre">
+                    Sobre
+                </button>
+            </div>
+            <div id="collapseSobre" class="collapse show">
+                <div class="card-body">
+                    <a href="sobrenos.html" class="text-decoration-none d-block text-center">Sobre nós</a>
                 </div>
             </div>
         </div>
     </div>
+
     <footer class="nav-bottom d-flex justify-content-around py-2">
         <a href="index.html"><i class="bi bi-house-door-fill"></i></a>
-        <a href="#"><i class="bi bi-search "></i></a>
-        <a href="config.html"><i class="bi bi-bell-fill"></i></a>
+        <a href="#"><i class="bi bi-search"></i></a>
+        <a href="notific.html"><i class="bi bi-bell-fill"></i></a>
         <a href="perfil.html"><i class="bi bi-person-circle"></i></a>
     </footer>
+
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

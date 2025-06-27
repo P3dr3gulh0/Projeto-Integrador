@@ -74,8 +74,8 @@ button:hover{
 
 /* Acessibilidade: Alto Contraste */
 .alto-contraste {
-  background-color: #001D32 !important;
-  color: #FA7426 !important;
+  background-color: #FA7426 !important;
+  color:  #001D32!important;
 }
 
 .alto-contraste a {
@@ -83,8 +83,8 @@ button:hover{
 }
 
 .alto-contraste button {
-  background-color: #FA7426 !important;
-  color: #001D32 !important;
+  background-color: #001D32 !important;
+  color: #FA7426 !important;
 }
 
 #btn-contraste {
