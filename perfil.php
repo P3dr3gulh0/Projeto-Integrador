@@ -53,6 +53,12 @@ if (!isset($_SESSION["usuario"])) {
         .btn-logout:hover {
             background-color: #c82333;
         }
+
+        a:hover {
+            background-color: #FA7426;
+            color: #001f3f;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -62,8 +68,8 @@ if (!isset($_SESSION["usuario"])) {
         <h2>Perfil do Usuário</h2>
         <p><strong>Nome:</strong> <?php echo htmlspecialchars($_SESSION["usuario"]["nome"]); ?></p>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($_SESSION["usuario"]["email"]); ?></p>
-        <a href="http://localhost/testeTrustwork/logout.php" class="btn btn-logout mt-4">Sair</a>
-        <a style="background-color: #e26317;" href="servicos.html" class="btn btn-logout mt-4">Voltar</a>
+        <a href="http://localhost/Projeto-Integrador/logout.php" class="btn btn-logout mt-4">Sair</a>
+        <a style="background-color: #e26317;" href="index.html" class="btn btn-logout mt-4">Voltar</a>
     </div>
 
 </body>

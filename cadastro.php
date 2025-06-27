@@ -1,6 +1,7 @@
 <?php include('conexao.php'); ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <title>Cadastro - Trustwork</title>
@@ -30,8 +31,15 @@
         .btn-orange:hover {
             background-color: #e26317;
         }
+
+        a:hover {
+            background-color: #FA7426;
+            color: #001f3f;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
@@ -52,6 +60,7 @@
                     <input type="password" class="form-control" id="senha" name="senha" required>
                 </div>
                 <button type="submit" class="btn btn-orange w-100">Cadastrar</button>
+                <a style="background-color: #e26317;" href="servicos.html" class="btn btn-logout mt-4">Voltar</a>
             </form>
 
             <?php
@@ -75,4 +84,5 @@
     </div>
 
 </body>
+
 </html>
