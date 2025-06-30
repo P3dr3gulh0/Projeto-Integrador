@@ -1,256 +1,227 @@
-/* Estilo global */
+/* === VARIÁVEIS DE CORES === */
 :root {
   --cor-primaria: #FA7426;
-  --cor-escura: #001D32;
-  --cor-clara: #CFCFCF;
+  --cor-secundaria: #e67300;
+  --cor-escura: #001f3f;
+  --branco: #ffffff;
+  --cinza-claro: #c6c6c5;
+  --cinza-texto: #666666;
 }
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
-
-/* Fundo geral */
+/* === BASE === */
 body {
-  background-color: #CFCFCF;
-  padding-bottom: 60px;
+  background-color: var(--cinza-claro);
+  color: var(--cor-escura);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 70px; /* espaço para nav inferior */
 }
 
-/* Itens de categoria */
-.categoria-item img {
-  width: 50px;
-  height: 50px;
+/* === UTILITÁRIOS === */
+.bg-claro { background-color: var(--cinza-claro); }
+.bg-escuro { background-color: var(--cor-escura); }
+.text-escuro { color: var(--cor-escura); }
+.cor-primaria { color: var(--cor-primaria); }
+
+/* === BOTÕES GERAIS === */
+.btn {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
-/* Imagens de serviços */
-.servico-card img {
-  height: 120px;
-  object-fit: cover;
+.btn-destaque {
+  background-color: var(--cor-primaria);
+  color: var(--branco);
+  text-decoration: none;
 }
 
-/* Rodapé fixo */
-.nav-bottom {
+.btn-destaque:hover {
+  background-color: var(--cor-secundaria);
+  color: var(--branco);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--cor-primaria);
+  color: var(--branco);
+}
+
+/* === HEADER E HERO === */
+header, .hero {
+  background: linear-gradient(to right, var(--cor-escura), #003366);
+  color: var(--branco);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+/* === FORMULÁRIOS === */
+.search-bar input,
+input.form-control,
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* === CARDS GERAIS === */
+.card,
+.result-card {
+  background-color: var(--branco);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.result-card h5 {
+  color: var(--cor-primaria);
+}
+
+/* === NAV INFERIOR FIXA === */
+footer.nav-bottom {
   position: fixed;
   bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #001D32;
-  border-top: 1px solid #CFCFCF;
-  z-index: 1000;
+  width: 100%;
+  background-color: var(--branco);
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  z-index: 1030;
 }
 
 footer.nav-bottom a {
-  color: #FA7426;
+  color: var(--cor-escura);
+  font-size: 1.4rem;
+  text-decoration: none;
 }
 
-/* Carrossel */
-.carousel-item img {
-  width: 50%;
-  height: 300px;
-  object-fit: cover;
+footer.nav-bottom a:hover {
+  color: var(--cor-primaria);
 }
 
-.carousel-caption {
-  transition: opacity 0.5s ease-in-out;
+/* === TEXTOS PEQUENOS === */
+.small.text-muted {
+  color: var(--cinza-texto) !important;
 }
 
-/* Botões gerais */
-button,
-.btn {
-  background-color: #FA7426;
-  border: none;
-  border-radius: 5px;
-  color: #001D32;
-  transition: background-color 0.2s;
-}
-
-button:hover{
-  background-color:  #FA7426;
-  color:#001D32;
-}
-
-/* Acessibilidade: Alto Contraste */
-.alto-contraste {
-  background-color: #FA7426 !important;
-  color:  #001D32!important;
-}
-
-.alto-contraste a {
-  color: #CFCFCF !important;
-}
-
-.alto-contraste button {
-  background-color: #001D32 !important;
-  color: #FA7426 !important;
-}
-
-#btn-contraste {
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  z-index: 999;
-}
-
-/* Modo escuro (fallback) */
-body.dark-mode {
-  background-color: #001D32;
-  color: #CFCFCF;
-}
-
-body.dark-mode .card {
-  background-color: #001D32;
-  border-color: #CFCFCF;
-}
-
-body.dark-mode input,
-body.dark-mode label {
-  color: #CFCFCF;
-}
-
-/* Página de perfil do profissional */
-.tab-button {
-  flex: 1;
-  background-color: #CFCFCF;
-  color: #001D32;
-  border: 1px solid #001D32;
-  border-radius: 3px;
-  transition: background-color 0.2s, color 0.2s;
-}
-
-.tab-button.active {
-  background-color: #001D32;
-  color: #FA7426;
-}
-
-.rating-graph div {
-  height: 6px;
-  background-color: #FA7426;
-  margin: 4px 0;
-}
-
-/* Avatar de profissional */
-.professional-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* Rótulo menor */
-.small-label {
-  font-size: 0.875rem;
-  color: #001D32;
-}
-
-/* Página 'Sobre' */
-body.sobre-page {
-  background-color: #CFCFCF;
+/* === PÁGINA SOBRE NÓS === */
+.page-sobrenos {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  background-color: var(--cinza-claro);
 }
 
-.sobre-container {
-  background-color: #FFFFFF;
-  border-radius: 10px;
+.sobrenos-container {
+  background-color: var(--branco);
+  border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
   max-width: 700px;
   width: 100%;
+  text-align: justify;
+}
+
+.sobrenos-container h1,
+.sobrenos-container h2 {
+  font-family: 'Michroma', sans-serif;
   text-align: center;
 }
 
-.sobre-container h1 {
-  color: #FA7426;
+.sobrenos-container h1 {
   font-size: 28px;
-  font-weight: 600;
+  color: var(--cor-primaria);
   margin-bottom: 20px;
 }
 
-.sobre-container h2 {
-  color: #001D32;
+.sobrenos-container h2 {
+  color: #333;
   font-size: 22px;
-  font-weight: 600;
   margin: 20px 0 10px;
 }
 
-.sobre-container p {
-  color: #001D32;
+.sobrenos-container p,
+.sobrenos-container ul li {
   font-size: 16px;
+  color: #333;
   line-height: 1.6;
-  margin-bottom: 15px;
 }
 
-.sobre-container ul {
+.sobrenos-container ul {
   list-style: none;
-  text-align: left;
-  margin-bottom: 20px;
+  padding-left: 0;
 }
 
-.sobre-container ul li {
-  font-size: 16px;
-  color: #001D32;
+.sobrenos-container ul li {
   margin-bottom: 10px;
-  padding-left: 20px;
+  padding-left: 25px;
   position: relative;
 }
 
-.sobre-container ul li::before {
+.sobrenos-container ul li::before {
   content: '✔';
-  color: #001D32;
+  color: var(--cor-escura);
   position: absolute;
   left: 0;
 }
 
 .highlight {
-  color: #FA7426;
+  color: var(--cor-escura);
   font-weight: 600;
 }
 
-/* Botão de chamada para ação na página Sobre */
-.cta-button {
-  display: inline-block;
-  padding: 12px 20px;
-  background-color: #001D32;
-  color: #FA7426;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
-  margin-top: 20px;
+/* === CONFIGURAÇÕES (config.html) === */
+.page-config {
+  background-color: var(--cinza-claro);
+  min-height: 100vh;
+  padding-bottom: 80px;
 }
 
-.cta-button:hover {
-  background-color: #FA7426;
-  color: #001D32;
-  transform: translateY(-2px);
+.page-config h1 {
+  color: var(--cor-escura);
 }
 
+.page-config .card-header {
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+
+.page-config .btn-link {
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.page-config .btn-link:hover {
+  background-color: var(--cor-primaria);
+  color: var(--branco);
+  font-weight: bold;
+}
+
+/* === RESPONSIVO === */
 @media (max-width: 600px) {
-  .sobre-container {
+  .sobrenos-container {
     padding: 20px;
   }
 
-  .sobre-container h1 {
+  .sobrenos-container h1 {
     font-size: 24px;
   }
 
-  .sobre-container h2 {
+  .sobrenos-container h2 {
     font-size: 20px;
   }
 
-  .sobre-container p,
-  .sobre-container ul li {
+  .sobrenos-container p,
+  .sobrenos-container ul li {
     font-size: 14px;
-  }
-
-  .cta-button {
-    font-size: 14px;
-    padding: 10px 15px;
   }
 }
