@@ -1,77 +1,125 @@
-<!-- === INDEX.HTML (corrigido) === -->
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
-    <title>Trustwork - Início</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TrustWork - Conectando talentos a oportunidades com confiança e inovação. Plataforma para encontrar trabalhadores autónomos qualificados.">
+    <meta name="keywords" content="trabalho, autónomos, serviços, confiança, oportunidades">
+    <meta name="author" content="TrustWork">
+    
+    <title>TrustWork - Conectando Talentos a Oportunidades</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #c6c6c5;
-            color: #001f3f;
-        }
-
-        header {
-            background-color: #001f3f;
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .hero {
-            padding: 40px 20px;
-            text-align: center;
-            background: linear-gradient(to right, #001f3f, #003366);
-            color: white;
-        }
-
-        .hero a {
-            display: inline-block;
-            margin: 10px;
-            padding: 12px 25px;
-            background-color: #FF851B;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .hero a:hover {
-            background-color: #e67300;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        a:hover {
-            background-color: #FA7426;
-            color: #001f3f;
-            font-weight: bold;
-        }
-    </style>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload para melhor performance -->
+    <link rel="preload" href="style.css" as="style">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
-    <header>
-        <h1>Trustwork</h1>
+    <!-- Skip link para acessibilidade -->
+    <a href="#main-content" class="sr-only">Pular para o conteúdo principal</a>
+    
+    <header role="banner">
+        <h1>TrustWork</h1>
+        <p class="sr-only">Plataforma de conexão entre clientes e trabalhadores autónomos</p>
     </header>
 
-    <section class="hero">
-        <p>Conectando talentos a oportunidades com confiança e inovação.</p>
-        <a href="http://localhost/Projeto-Integrador/cadastro.php">Cadastre-se</a>
-        <a href="http://localhost/Projeto-Integrador/login.php">Login</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="sobrenos.html">Sobre Nós</a>
-    </section>
+    <main id="main-content" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <h2 id="hero-title" class="sr-only">Bem-vindo ao TrustWork</h2>
+            <p>Conectando talentos a oportunidades com confiança e inovação.</p>
+            
+            <nav aria-label="Navegação principal" class="hero-nav">
+                <a href="http://localhost/Projeto-Integrador/cadastro.php" class="btn btn-orange" aria-describedby="cadastro-desc">
+                    Cadastre-se
+                    <span id="cadastro-desc" class="sr-only">Criar nova conta no TrustWork</span>
+                </a>
+                <a href="http://localhost/Projeto-Integrador/login.php" class="btn btn-orange" aria-describedby="login-desc">
+                    Login
+                    <span id="login-desc" class="sr-only">Entrar na sua conta</span>
+                </a>
+                <a href="servicos.html" class="btn btn-orange" aria-describedby="servicos-desc">
+                    Serviços
+                    <span id="servicos-desc" class="sr-only">Ver serviços disponíveis</span>
+                </a>
+                <a href="sobrenos.html" class="btn btn-orange" aria-describedby="sobre-desc">
+                    Sobre Nós
+                    <span id="sobre-desc" class="sr-only">Conhecer mais sobre o TrustWork</span>
+                </a>
+            </nav>
+        </section>
+        
+        <!-- Seção adicional com informações -->
+        <section class="container mt-5" aria-labelledby="info-title">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">🔒 Segurança</h3>
+                            <p class="card-text">Todos os profissionais são verificados para garantir sua segurança e confiança.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">⚡ Rapidez</h3>
+                            <p class="card-text">Encontre o profissional ideal em poucos cliques e agende rapidamente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <h3 class="card-title">💰 Preços Justos</h3>
+                            <p class="card-text">Compare preços e escolha a melhor opção para o seu orçamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo" class="text-center py-4 mt-5">
+        <div class="container">
+            <p>&copy; 2024 TrustWork. Todos os direitos reservados.</p>
+            <p>
+                <a href="politica-privacidade.html" class="text-muted">Política de Privacidade</a> | 
+                <a href="termos-uso.html" class="text-muted">Termos de Uso</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personalizado -->
+    <script>
+        // Melhorar acessibilidade com navegação por teclado
+        document.addEventListener('DOMContentLoaded', function() {
+            // Adicionar indicadores visuais para navegação por teclado
+            const links = document.querySelectorAll('a, button');
+            links.forEach(link => {
+                link.addEventListener('focus', function() {
+                    this.style.outline = '2px solid #FA7426';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                link.addEventListener('blur', function() {
+                    this.style.outline = '';
+                    this.style.outlineOffset = '';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
+

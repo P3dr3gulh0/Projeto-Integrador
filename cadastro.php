@@ -60,7 +60,7 @@
                     <input type="password" class="form-control" id="senha" name="senha" required>
                 </div>
                 <button type="submit" class="btn btn-orange w-100">Cadastrar</button>
-                <a style="background-color: #e26317;" href="servicos.html" class="btn btn-logout mt-4">Voltar</a>
+                <a style="background-color: #e26317;" href="index.html" class="btn btn-logout mt-4">Voltar</a>
             </form>
 
             <?php

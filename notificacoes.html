@@ -3,78 +3,445 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Notificações - Trustwork</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Suas notificações no TrustWork - acompanhe propostas e atualizações">
+    <title>Notificações - TrustWork</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #c6c6c5;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-        }
-
-        .notification {
-            background-color: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 15px;
-        }
-
-        .notification.unread {
-            border-left: 5px solid #FA7426;
-            color: #001f3f;
-        }
-
-        .notification p {
-            margin: 0;
-        }
-
-        .notification time {
-            font-size: 0.9em;
-            color: #666;
-        }
-
-        h2 {
-            color: #001f3f;
-        }
-        a:hover{
-            background-color: #FA7426;
-            color: #001f3f;
-            font-weight: bold;
-        }
-    </style>
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Skip link para acessibilidade -->
+    <a href="#main-content" class="sr-only">Pular para o conteúdo principal</a>
+    
+    <header class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h1 class="h3 mb-0">
+                    <i class="bi bi-bell-fill me-2"></i>
+                    Notificações
+                </h1>
+                <div class="d-flex gap-2">
+                    <button id="mark-all-read" class="btn btn-outline-light btn-sm">
+                        <i class="bi bi-check2-all"></i>
+                        <span class="d-none d-md-inline">Marcar todas como lidas</span>
+                    </button>
+                    <button id="clear-all" class="btn btn-outline-light btn-sm">
+                        <i class="bi bi-trash"></i>
+                        <span class="d-none d-md-inline">Limpar todas</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <div class="container">
-        <h2 class="text-center mb-4">Suas Notificações</h2>
+    <main id="main-content" class="container py-4">
+        <!-- Filtros de notificação -->
+        <section class="filter-section mb-4" aria-label="Filtros de notificação">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row g-3 align-items-center">
+                        <div class="col-md-4">
+                            <label for="notification-filter" class="form-label">Filtrar por tipo:</label>
+                            <select id="notification-filter" class="form-select">
+                                <option value="all">Todas as notificações</option>
+                                <option value="proposals">Propostas</option>
+                                <option value="confirmations">Confirmações</option>
+                                <option value="system">Sistema</option>
+                                <option value="messages">Mensagens</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="status-filter" class="form-label">Status:</label>
+                            <select id="status-filter" class="form-select">
+                                <option value="all">Todas</option>
+                                <option value="unread">Não lidas</option>
+                                <option value="read">Lidas</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="date-filter" class="form-label">Período:</label>
+                            <select id="date-filter" class="form-select">
+                                <option value="all">Todas as datas</option>
+                                <option value="today">Hoje</option>
+                                <option value="week">Esta semana</option>
+                                <option value="month">Este mês</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <div class="notification unread">
-            <p><strong>Você recebeu uma nova proposta para o serviço de Pedreiro (Joaquim Moreira).</strong></p>
-            <time>Há 2 horas</time>
+        <!-- Contador de notificações -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h2 class="h5 mb-0">Suas Notificações</h2>
+            <span id="notification-count" class="badge bg-primary">3 não lidas</span>
         </div>
 
-        <div class="notification">
-            <p>Confirmação de agendamento com Eletricista para 25/06 às 14h.</p>
-            <time>Ontem</time>
+        <!-- Lista de notificações -->
+        <section id="notifications-list" aria-label="Lista de notificações">
+            <!-- Notificação 1 - Nova proposta -->
+            <div class="notification unread" 
+                 data-type="proposals" 
+                 data-status="unread" 
+                 data-date="2024-06-27"
+                 role="article"
+                 aria-labelledby="notif-1-title">
+                <div class="d-flex">
+                    <div class="notification-icon me-3">
+                        <div class="bg-success rounded-circle d-flex align-items-center justify-content-center" 
+                             style="width: 40px; height: 40px;">
+                            <i class="bi bi-briefcase-fill text-white"></i>
+                        </div>
+                    </div>
+                    <div class="notification-content flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 id="notif-1-title" class="h6 mb-1">Nova proposta recebida</h3>
+                                <p class="mb-2">
+                                    <strong>Joaquim Moreira</strong> enviou uma proposta para o serviço de 
+                                    <strong>Pedreiro</strong>. Valor: R$ 350,00
+                                </p>
+                                <div class="d-flex gap-2 mb-2">
+                                    <button class="btn btn-success btn-sm">
+                                        <i class="bi bi-check-circle"></i> Aceitar
+                                    </button>
+                                    <button class="btn btn-outline-danger btn-sm">
+                                        <i class="bi bi-x-circle"></i> Recusar
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-chat"></i> Negociar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-actions">
+                                <button class="btn btn-sm btn-outline-secondary mark-read" 
+                                        title="Marcar como lida"
+                                        aria-label="Marcar notificação como lida">
+                                    <i class="bi bi-check"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger delete-notification" 
+                                        title="Excluir notificação"
+                                        aria-label="Excluir notificação">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <time class="text-muted small" datetime="2024-06-27T14:30:00">
+                            <i class="bi bi-clock"></i> Há 2 horas
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notificação 2 - Confirmação -->
+            <div class="notification" 
+                 data-type="confirmations" 
+                 data-status="read" 
+                 data-date="2024-06-26"
+                 role="article"
+                 aria-labelledby="notif-2-title">
+                <div class="d-flex">
+                    <div class="notification-icon me-3">
+                        <div class="bg-info rounded-circle d-flex align-items-center justify-content-center" 
+                             style="width: 40px; height: 40px;">
+                            <i class="bi bi-calendar-check-fill text-white"></i>
+                        </div>
+                    </div>
+                    <div class="notification-content flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 id="notif-2-title" class="h6 mb-1">Agendamento confirmado</h3>
+                                <p class="mb-2">
+                                    Confirmação de agendamento com <strong>Ana Costa (Eletricista)</strong> 
+                                    para 25/06 às 14h. Local: Rua das Flores, 123.
+                                </p>
+                                <div class="d-flex gap-2 mb-2">
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="bi bi-geo-alt"></i> Ver localização
+                                    </button>
+                                    <button class="btn btn-outline-warning btn-sm">
+                                        <i class="bi bi-pencil"></i> Reagendar
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-actions">
+                                <button class="btn btn-sm btn-outline-danger delete-notification" 
+                                        title="Excluir notificação"
+                                        aria-label="Excluir notificação">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <time class="text-muted small" datetime="2024-06-26T10:15:00">
+                            <i class="bi bi-clock"></i> Ontem às 10:15
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notificação 3 - Sistema -->
+            <div class="notification" 
+                 data-type="system" 
+                 data-status="read" 
+                 data-date="2024-06-24"
+                 role="article"
+                 aria-labelledby="notif-3-title">
+                <div class="d-flex">
+                    <div class="notification-icon me-3">
+                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center" 
+                             style="width: 40px; height: 40px;">
+                            <i class="bi bi-shield-check-fill text-white"></i>
+                        </div>
+                    </div>
+                    <div class="notification-content flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 id="notif-3-title" class="h6 mb-1">Cadastro aprovado</h3>
+                                <p class="mb-2">
+                                    Parabéns! Seu cadastro foi aprovado com sucesso. 
+                                    Agora pode explorar todos os serviços disponíveis na plataforma.
+                                </p>
+                                <div class="d-flex gap-2 mb-2">
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="bi bi-grid-3x3-gap"></i> Explorar serviços
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-actions">
+                                <button class="btn btn-sm btn-outline-danger delete-notification" 
+                                        title="Excluir notificação"
+                                        aria-label="Excluir notificação">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <time class="text-muted small" datetime="2024-06-24T09:00:00">
+                            <i class="bi bi-clock"></i> 3 dias atrás
+                        </time>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Notificação 4 - Mensagem -->
+            <div class="notification unread" 
+                 data-type="messages" 
+                 data-status="unread" 
+                 data-date="2024-06-27"
+                 role="article"
+                 aria-labelledby="notif-4-title">
+                <div class="d-flex">
+                    <div class="notification-icon me-3">
+                        <div class="bg-warning rounded-circle d-flex align-items-center justify-content-center" 
+                             style="width: 40px; height: 40px;">
+                            <i class="bi bi-chat-fill text-white"></i>
+                        </div>
+                    </div>
+                    <div class="notification-content flex-grow-1">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div>
+                                <h3 id="notif-4-title" class="h6 mb-1">Nova mensagem</h3>
+                                <p class="mb-2">
+                                    <strong>João Silva</strong> enviou uma mensagem: 
+                                    "Olá! Posso fazer o serviço amanhã pela manhã. Confirma?"
+                                </p>
+                                <div class="d-flex gap-2 mb-2">
+                                    <button class="btn btn-primary btn-sm">
+                                        <i class="bi bi-reply"></i> Responder
+                                    </button>
+                                    <button class="btn btn-outline-primary btn-sm">
+                                        <i class="bi bi-chat-dots"></i> Ver conversa
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="notification-actions">
+                                <button class="btn btn-sm btn-outline-secondary mark-read" 
+                                        title="Marcar como lida"
+                                        aria-label="Marcar notificação como lida">
+                                    <i class="bi bi-check"></i>
+                                </button>
+                                <button class="btn btn-sm btn-outline-danger delete-notification" 
+                                        title="Excluir notificação"
+                                        aria-label="Excluir notificação">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <time class="text-muted small" datetime="2024-06-27T08:45:00">
+                            <i class="bi bi-clock"></i> Há 8 horas
+                        </time>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Estado vazio -->
+        <div id="empty-state" class="text-center py-5" style="display: none;">
+            <i class="bi bi-bell-slash display-1 text-muted"></i>
+            <h3 class="mt-3">Nenhuma notificação encontrada</h3>
+            <p class="text-muted">Não há notificações que correspondam aos filtros selecionados.</p>
         </div>
 
-        <div class="notification">
-            <p>Seu cadastro foi aprovado! Explore os serviços agora.</p>
-            <time>3 dias atrás</time>
+        <!-- Botão voltar -->
+        <div class="mt-4">
+            <a href="servicos.html" class="btn btn-secondary">
+                <i class="bi bi-arrow-left"></i> Voltar aos Serviços
+            </a>
         </div>
-    </div>
-    <div class="container">
-        <a style="background-color: #e26317;" href="servicos.html" class="btn btn-logout mt-4">Voltar</a>
-    </div>
+    </main>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript personalizado -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const notificationsList = document.getElementById('notifications-list');
+            const emptyState = document.getElementById('empty-state');
+            const notificationCount = document.getElementById('notification-count');
+            const markAllReadBtn = document.getElementById('mark-all-read');
+            const clearAllBtn = document.getElementById('clear-all');
+            
+            // Filtros
+            const typeFilter = document.getElementById('notification-filter');
+            const statusFilter = document.getElementById('status-filter');
+            const dateFilter = document.getElementById('date-filter');
+            
+            // Event listeners para filtros
+            [typeFilter, statusFilter, dateFilter].forEach(filter => {
+                filter.addEventListener('change', applyFilters);
+            });
+            
+            // Marcar todas como lidas
+            markAllReadBtn.addEventListener('click', function() {
+                const unreadNotifications = document.querySelectorAll('.notification.unread');
+                unreadNotifications.forEach(notification => {
+                    markAsRead(notification);
+                });
+                updateNotificationCount();
+            });
+            
+            // Limpar todas
+            clearAllBtn.addEventListener('click', function() {
+                if (confirm('Tem a certeza que deseja excluir todas as notificações?')) {
+                    const notifications = document.querySelectorAll('.notification');
+                    notifications.forEach(notification => {
+                        notification.remove();
+                    });
+                    updateNotificationCount();
+                    checkEmptyState();
+                }
+            });
+            
+            // Event listeners para ações individuais
+            document.addEventListener('click', function(e) {
+                if (e.target.closest('.mark-read')) {
+                    const notification = e.target.closest('.notification');
+                    markAsRead(notification);
+                    updateNotificationCount();
+                }
+                
+                if (e.target.closest('.delete-notification')) {
+                    const notification = e.target.closest('.notification');
+                    if (confirm('Excluir esta notificação?')) {
+                        notification.remove();
+                        updateNotificationCount();
+                        checkEmptyState();
+                    }
+                }
+            });
+            
+            function markAsRead(notification) {
+                notification.classList.remove('unread');
+                notification.dataset.status = 'read';
+                const markReadBtn = notification.querySelector('.mark-read');
+                if (markReadBtn) {
+                    markReadBtn.remove();
+                }
+            }
+            
+            function applyFilters() {
+                const typeValue = typeFilter.value;
+                const statusValue = statusFilter.value;
+                const dateValue = dateFilter.value;
+                
+                const notifications = document.querySelectorAll('.notification');
+                let visibleCount = 0;
+                
+                notifications.forEach(notification => {
+                    const type = notification.dataset.type;
+                    const status = notification.dataset.status;
+                    const date = notification.dataset.date;
+                    
+                    let showType = typeValue === 'all' || type === typeValue;
+                    let showStatus = statusValue === 'all' || status === statusValue;
+                    let showDate = dateValue === 'all' || checkDateFilter(date, dateValue);
+                    
+                    if (showType && showStatus && showDate) {
+                        notification.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        notification.style.display = 'none';
+                    }
+                });
+                
+                checkEmptyState();
+            }
+            
+            function checkDateFilter(notificationDate, filterValue) {
+                const today = new Date();
+                const notifDate = new Date(notificationDate);
+                
+                switch(filterValue) {
+                    case 'today':
+                        return notifDate.toDateString() === today.toDateString();
+                    case 'week':
+                        const weekAgo = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+                        return notifDate >= weekAgo;
+                    case 'month':
+                        const monthAgo = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+                        return notifDate >= monthAgo;
+                    default:
+                        return true;
+                }
+            }
+            
+            function updateNotificationCount() {
+                const unreadCount = document.querySelectorAll('.notification.unread:not([style*="display: none"])').length;
+                notificationCount.textContent = unreadCount > 0 ? 
+                    `${unreadCount} não lida${unreadCount > 1 ? 's' : ''}` : 
+                    'Todas lidas';
+                notificationCount.className = unreadCount > 0 ? 'badge bg-primary' : 'badge bg-success';
+            }
+            
+            function checkEmptyState() {
+                const visibleNotifications = document.querySelectorAll('.notification:not([style*="display: none"])');
+                if (visibleNotifications.length === 0) {
+                    notificationsList.style.display = 'none';
+                    emptyState.style.display = 'block';
+                } else {
+                    notificationsList.style.display = 'block';
+                    emptyState.style.display = 'none';
+                }
+            }
+            
+            // Inicializar contador
+            updateNotificationCount();
+            
+            // Simular notificações em tempo real
+            setInterval(function() {
+                // Aqui seria implementada a lógica para buscar novas notificações
+                // Por enquanto, apenas um exemplo
+            }, 30000); // Verificar a cada 30 segundos
+        });
+    </script>
 </body>
 
 </html>
+
