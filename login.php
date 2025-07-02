@@ -70,6 +70,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button type="submit" class="btn btn-orange w-100">Entrar</button>
                 <a style="background-color: #e26317;" href="index.html" class="btn btn-logout mt-4">Voltar</a>
             </form>
+            <div class="text-center mt-4">
+                <p class="text-muted">
+                    Ainda não tem uma conta?
+                    <a href="http://localhost/Projeto-Integrador/cadastro.php" class="text-decoration-none fw-semibold">
+                        Crie sua conta aqui
+                    </a>
+                </p>
+            </div>
         </div>
     </div>
 </body>
