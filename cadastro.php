@@ -4,11 +4,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Cadastro - Trustwork</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
+    <!-- <style>
+        body.cadastro {
             background-color: #c6c6c5;
             font-family: 'Segoe UI', sans-serif;
         }
@@ -37,10 +38,10 @@
             color: #001f3f;
             font-weight: bold;
         }
-    </style>
+    </style> -->
 </head>
 
-<body>
+<body class="cadastro">
 
     <div class="container">
         <div class="cadastro-container">

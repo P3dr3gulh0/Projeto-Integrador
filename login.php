@@ -42,10 +42,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Login - Trustwork</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <!-- <style>
         body {
             background-color: #c6c6c5;
         }
@@ -68,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         .btn-orange:hover {
             background-color: #e26317;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -90,6 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     <input type="password" class="form-control" id="senha" name="senha" required>
                 </div>
                 <button type="submit" class="btn btn-orange w-100">Entrar</button>
+                <a style="background-color: #e26317;" href="index.html" class="btn btn-logout mt-4">Voltar</a>
             </form>
         </div>
     </div>

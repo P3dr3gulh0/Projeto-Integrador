@@ -12,54 +12,11 @@ if (!isset($_SESSION["usuario"])) {
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>Perfil - Trustwork</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #c6c6c5;
-            font-family: 'Segoe UI', sans-serif;
-        }
 
-        .perfil-container {
-            max-width: 480px;
-            margin: 60px auto;
-            background-color: #fff;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            text-align: center;
-        }
-
-        .perfil-container h2 {
-            margin-bottom: 30px;
-            color: #001f3f;
-        }
-
-        .perfil-container p {
-            font-size: 1.1em;
-            margin: 10px 0;
-        }
-
-        .btn-logout {
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 5px;
-            transition: background-color 0.2s;
-        }
-
-        .btn-logout:hover {
-            background-color: #c82333;
-        }
-
-        a:hover {
-            background-color: #FA7426;
-            color: #001f3f;
-            font-weight: bold;
-        }
-    </style>
 </head>
 
 <body>

@@ -137,6 +137,14 @@ header h1 {
     box-shadow: var(--sombra-padrao);
 }
 
+.message-box {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
 .perfil-container {
     text-align: center;
 }
@@ -399,26 +407,26 @@ nav a:hover {
     header h1 {
         font-size: 2rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .cadastro-container,
     .login-container,
     .perfil-container {
         margin: 30px 20px;
         padding: 20px;
     }
-    
+
     .categories {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
-    
+
     nav {
         padding: 0.5rem 0;
     }
-    
+
     nav a {
         font-size: 1.3rem;
     }
@@ -429,51 +437,51 @@ nav a:hover {
     header {
         padding: 20px 10px;
     }
-    
+
     header h1 {
         font-size: 1.8rem;
     }
-    
+
     .hero {
         padding: 20px 10px;
     }
-    
+
     .hero a {
         display: block;
         margin: 10px 0;
         padding: 10px 20px;
     }
-    
+
     .cadastro-container,
     .login-container,
     .perfil-container {
         margin: 20px 10px;
         padding: 15px;
     }
-    
+
     .categories {
         grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
         padding: 0.5rem;
     }
-    
+
     .category {
         padding: 0.5rem;
     }
-    
+
     .sobre-container {
         padding: 20px;
         margin: 10px;
     }
-    
+
     .sobre-container h1 {
         font-size: 24px;
     }
-    
+
     .sobre-container h2 {
         font-size: 20px;
     }
-    
+
     .sobre-container p,
     .sobre-container ul li {
         font-size: 14px;
@@ -515,14 +523,13 @@ nav a:focus {
     nav {
         display: none;
     }
-    
+
     .btn {
         display: none;
     }
-    
+
     body {
         background: white;
         color: black;
     }
 }
-
