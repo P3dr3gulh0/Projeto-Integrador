@@ -101,24 +101,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- JavaScript personalizado -->
-    <script>
-        // Melhorar acessibilidade com navegação por teclado
-        document.addEventListener('DOMContentLoaded', function() {
-            // Adicionar indicadores visuais para navegação por teclado
-            const links = document.querySelectorAll('a, button');
-            links.forEach(link => {
-                link.addEventListener('focus', function() {
-                    this.style.outline = '2px solid #FA7426';
-                    this.style.outlineOffset = '2px';
-                });
-                
-                link.addEventListener('blur', function() {
-                    this.style.outline = '';
-                    this.style.outlineOffset = '';
-                });
-            });
-        });
-    </script>
+    <script href="script.js"></script>
 </body>
 
 </html>

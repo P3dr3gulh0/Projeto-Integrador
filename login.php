@@ -46,30 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Login - Trustwork</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <style>
-        body {
-            background-color: #c6c6c5;
-        }
 
-        .login-container {
-            max-width: 400px;
-            margin: 60px auto;
-            padding: 30px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-orange {
-            background-color: #FA7426;
-            border: none;
-            color: white;
-        }
-
-        .btn-orange:hover {
-            background-color: #e26317;
-        }
-    </style> -->
 </head>
 
 <body>
