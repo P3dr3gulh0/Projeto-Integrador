@@ -200,7 +200,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-orange btn-sm">
+                                    <button class="btn btn-orange btn-sm contact-btn">
                                         <i class="bi bi-chat"></i> Contactar
                                     </button>
                                     <button class="btn btn-outline-primary btn-sm">
@@ -245,7 +245,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-orange btn-sm">
+                                    <button class="btn btn-orange btn-sm contact-btn">
                                         <i class="bi bi-chat"></i> Contactar
                                     </button>
                                     <button class="btn btn-outline-primary btn-sm">
@@ -290,7 +290,7 @@
                                     </div>
                                 </div>
                                 <div class="d-flex gap-2 mt-3">
-                                    <button class="btn btn-orange btn-sm">
+                                    <button class="btn btn-orange btn-sm contact-btn">
                                         <i class="bi bi-chat"></i> Contactar
                                     </button>
                                     <button class="btn btn-outline-primary btn-sm">
@@ -326,153 +326,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- JavaScript personalizado -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchForm = document.getElementById('search-form');
-            const searchInput = document.getElementById('search-input');
-            const resultsContainer = document.getElementById('results-container');
-            const loadingState = document.getElementById('loading-state');
-            const emptyState = document.getElementById('empty-state');
-            const resultsCount = document.getElementById('results-count');
-            const suggestionBtns = document.querySelectorAll('.suggestion-btn');
-            
-            // Sugestões rápidas
-            suggestionBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const searchTerm = this.dataset.search;
-                    searchInput.value = searchTerm;
-                    performSearch();
-                });
-            });
-            
-            // Pesquisa
-            searchForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                performSearch();
-            });
-            
-            // Pesquisa em tempo real
-            let searchTimeout;
-            searchInput.addEventListener('input', function() {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    if (this.value.length >= 2) {
-                        performSearch();
-                    }
-                }, 500);
-            });
-            
-            // Filtros
-            const filters = document.querySelectorAll('#advanced-filters select');
-            filters.forEach(filter => {
-                filter.addEventListener('change', performSearch);
-            });
-            
-            function performSearch() {
-                const searchTerm = searchInput.value.toLowerCase();
-                const priceRange = document.getElementById('price-range').value;
-                const ratingFilter = document.getElementById('rating-filter').value;
-                const sortBy = document.getElementById('sort-by').value;
-                
-                // Mostrar loading
-                showLoading();
-                
-                setTimeout(() => {
-                    const results = filterResults(searchTerm, priceRange, ratingFilter);
-                    const sortedResults = sortResults(results, sortBy);
-                    displayResults(sortedResults);
-                }, 800); // Simular delay de pesquisa
-            }
-            
-            function showLoading() {
-                resultsContainer.style.display = 'none';
-                emptyState.style.display = 'none';
-                loadingState.style.display = 'block';
-            }
-            
-            function filterResults(searchTerm, priceRange, ratingFilter) {
-                const allResults = document.querySelectorAll('.result-card');
-                const filteredResults = [];
-                
-                allResults.forEach(result => {
-                    const category = result.dataset.category;
-                    const price = parseInt(result.dataset.price);
-                    const rating = parseFloat(result.dataset.rating);
-                    
-                    let matchesSearch = !searchTerm || category.includes(searchTerm);
-                    let matchesPrice = !priceRange || checkPriceRange(price, priceRange);
-                    let matchesRating = !ratingFilter || rating >= parseFloat(ratingFilter);
-                    
-                    if (matchesSearch && matchesPrice && matchesRating) {
-                        filteredResults.push(result);
-                    }
-                });
-                
-                return filteredResults;
-            }
-            
-            function checkPriceRange(price, range) {
-                switch(range) {
-                    case '0-50': return price <= 50;
-                    case '50-100': return price > 50 && price <= 100;
-                    case '100-200': return price > 100 && price <= 200;
-                    case '200+': return price > 200;
-                    default: return true;
-                }
-            }
-            
-            function sortResults(results, sortBy) {
-                return results.sort((a, b) => {
-                    switch(sortBy) {
-                        case 'price-low':
-                            return parseInt(a.dataset.price) - parseInt(b.dataset.price);
-                        case 'price-high':
-                            return parseInt(b.dataset.price) - parseInt(a.dataset.price);
-                        case 'rating':
-                            return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
-                        default:
-                            return 0;
-                    }
-                });
-            }
-            
-            function displayResults(results) {
-                loadingState.style.display = 'none';
-                
-                if (results.length === 0) {
-                    resultsContainer.style.display = 'none';
-                    emptyState.style.display = 'block';
-                    resultsCount.textContent = '0 resultados encontrados';
-                } else {
-                    emptyState.style.display = 'none';
-                    resultsContainer.style.display = 'block';
-                    resultsCount.textContent = `${results.length} resultado${results.length > 1 ? 's' : ''} encontrado${results.length > 1 ? 's' : ''}`;
-                    
-                    // Reorganizar resultados
-                    resultsContainer.innerHTML = '';
-                    results.forEach(result => {
-                        resultsContainer.appendChild(result.cloneNode(true));
-                    });
-                    
-                    // Reativar event listeners nos botões
-                    addResultEventListeners();
-                }
-            }
-            
-            function addResultEventListeners() {
-                const contactBtns = document.querySelectorAll('.btn:contains("Contactar")');
-                contactBtns.forEach(btn => {
-                    btn.addEventListener('click', function() {
-                        alert('Funcionalidade de contacto será implementada em breve!');
-                    });
-                });
-            }
-            
-            // Inicializar event listeners
-            addResultEventListeners();
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
-
