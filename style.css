@@ -533,3 +533,414 @@ nav a:focus {
         color: black;
     }
 }
+
+/* === ESTILOS PARA PÁGINA SOBRE NÓS (SUBSTITUIÇÃO DO BOOTSTRAP) === */
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Sistema de grid responsivo */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+.col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 0 15px;
+}
+
+.col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px;
+}
+
+.col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+/* Utilitários de espaçamento */
+.py-4 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.py-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+.mb-5 {
+    margin-bottom: 3rem;
+}
+
+.mt-4 {
+    margin-top: 1.5rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Cores de fundo */
+.bg-primary {
+    background-color: var(--cor-primaria) !important;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+.bg-success {
+    background-color: #FA7426  !important;
+}
+
+.bg-warning {
+    background-color: var(--cor-secundaria) !important;
+}
+
+.bg-info {
+    background-color: #001d32 !important;
+}
+
+/* Cores de texto */
+.text-white {
+    color: var(--cor-branco) !important;
+}
+
+.text-white-50 {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-primary {
+    color: var(--cor-primaria) !important;
+}
+
+.text-success {
+    color: #28a745 !important;
+}
+
+.text-muted {
+    color: var(--cor-cinza) !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+/* Tipografia */
+.display-5 {
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.fw-bold {
+    font-weight: 700 !important;
+}
+
+.h2 {
+    font-size: 2rem;
+}
+
+.h5 {
+    font-size: 1.25rem;
+}
+
+.h6 {
+    font-size: 1rem;
+}
+
+.fs-3 {
+    font-size: 1.75rem !important;
+}
+
+.fs-4 {
+    font-size: 1.5rem !important;
+}
+
+.small {
+    font-size: 0.875rem;
+}
+
+/* Alinhamento */
+.align-items-center {
+    align-items: center !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.d-inline-flex {
+    display: inline-flex !important;
+}
+
+/* Imagens */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+.rounded {
+    border-radius: 0.375rem !important;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: var(--cor-branco);
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: var(--border-radius);
+    box-shadow: var(--sombra-padrao);
+    transition: var(--transicao);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.card-title {
+    margin-bottom: 0.75rem;
+    color: var(--cor-primaria);
+}
+
+.card-text {
+    margin-bottom: 0;
+    color: var(--cor-texto);
+}
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: calc(var(--border-radius) - 1px) calc(var(--border-radius) - 1px) 0 0;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
+.border-0 {
+    border: 0 !important;
+}
+
+.border-primary {
+    border-color: var(--cor-primaria) !important;
+}
+
+.border-success {
+    border-color: #28a745 !important;
+}
+
+/* Listas */
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: transparent;
+    border-radius: var(--border-radius);
+}
+
+.breadcrumb-item {
+    display: flex;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.5rem;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    display: inline-block;
+    padding-right: 0.5rem;
+    color: var(--cor-cinza);
+    content: "/";
+}
+
+.breadcrumb-item.active {
+    color: var(--cor-cinza);
+}
+
+.breadcrumb-item a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    transition: var(--transicao);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--cor-secundaria);
+}
+
+/* Hero section específica */
+.hero-section {
+    background: linear-gradient(135deg, var(--cor-fundo) 0%, #b8b8b7 100%);
+    padding: 4rem 0;
+}
+
+/* Ícones Bootstrap Icons substituídos por símbolos */
+.bi-house::before {
+    content: "🏠";
+}
+
+.bi-bullseye::before {
+    content: "🎯";
+}
+
+.bi-eye::before {
+    content: "👁️";
+}
+
+.bi-heart::before {
+    content: "❤️";
+}
+
+.bi-check-circle-fill::before {
+    content: "✅";
+}
+
+.bi-people::before {
+    content: "👥";
+}
+
+.bi-tools::before {
+    content: "🔧";
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .col-md-3,
+    .col-md-4,
+    .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .display-5 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .row {
+        margin: 0 -10px;
+    }
+
+    .col-12,
+    .col-md-3,
+    .col-md-4,
+    .col-md-6,
+    .col-lg-6 {
+        padding: 0 10px;
+    }
+}
+
+/* Responsividade para smartphones */
+@media (max-width: 480px) {
+    .py-5 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    .display-5 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .card-body {
+        padding: 1rem;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+}
+
